@@ -1,6 +1,7 @@
 package com.example.springcloud.entities;
 
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.CopyOnWriteArraySet;
 
@@ -8,6 +9,8 @@ public class ContainerNotSafeDemo {
     public static void main(String[] args) {
         List<String> list = new CopyOnWriteArrayList<>();
         Set<String> copyOnWriteArraySet = new CopyOnWriteArraySet<>();
+        Map<String, String> concurrentHashMap = new ConcurrentHashMap<>();
+        List synchronizedList = Collections.synchronizedList(new ArrayList<>());
         Set<String> hashSet = new HashSet<>();
         Map<String, String> hashMap = new HashMap<>();
         for (int i = 1; i <= 30; i++) {
